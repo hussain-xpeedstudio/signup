@@ -40,7 +40,7 @@ End Route for product
 /*--------------------------------------------------------------------------------- 
 Start Route for customer 
 // -----------------------------------------------------------------------------------*/
-Route::middleware(['admin'])->group(function () {
+Route::middleware([AdminMiddleware::class])->group(function () {
     Route::get('/admin/customers/create',[CustomerController::class,'create']);
     Route::get('/admin/warehouses/create',[WarehouseController::class,'create']);
 
