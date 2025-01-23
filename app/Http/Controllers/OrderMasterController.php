@@ -69,7 +69,7 @@ class OrderMasterController extends Controller
             $orderMaster->warehouse_id = $request->warehouse_id;
             $orderMaster->depo_id = $request->depo_id;
             $orderMaster->invoice_no = $invoiceNo;
-            $orderMaster->date = $order_date;
+            $orderMaster->order_date = $order_date;
             $orderMaster->num_of_item = $num_of_item;
             $orderMaster->order_status = ($user->role_id == 1 || $user->role_id == 2) ? 1 : 0; // Set status
             

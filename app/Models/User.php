@@ -42,6 +42,11 @@ class User extends Authenticatable
         return $this->role_id == 3;
     }
 
+    public function role()
+    {
+        return $this->belongsTo(UserRole::class, 'role_id','role_id');
+    }
+
 
     public function depoStocks()
     {

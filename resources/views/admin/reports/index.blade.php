@@ -70,7 +70,7 @@
                                                 <span class="badge badge-warning">Pending</span>
                                             @endif
                                         </td>
-                                        <td>{{$order->orderMaster->date}}</td>
+                                        <td>{{$order->orderMaster->order_date}}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

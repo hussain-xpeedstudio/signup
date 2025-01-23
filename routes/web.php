@@ -12,6 +12,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\WarehouseStockController;
 use App\Http\Controllers\DepoStockController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\AdminMiddleware;
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,9 +39,16 @@ End Route for product
 
 /*--------------------------------------------------------------------------------- 
 Start Route for customer 
------------------------------------------------------------------------------------*/
+// -----------------------------------------------------------------------------------*/
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin/customers/create',[CustomerController::class,'create']);
+    Route::get('/admin/warehouses/create',[WarehouseController::class,'create']);
+
+});
+// Route::get('/admin/warehouses/create',[WarehouseController::class,'create'])->middleware('admin');
+
+Route::get('/admin/warehouses/create',[WarehouseController::class,'create'])->middleware('admin');
 Route::get('/admin/customers',[CustomerController::class,'index']);
-Route::get('/admin/customers/create',[CustomerController::class,'create']);
 Route::post('/admin/customers/submit',[CustomerController::class,'store'])->name('customers.store');
 Route::get('/admin/customers/view/{slug}',[CustomerController::class,'view']);
 Route::get('/admin/customers/edit/{slug}',[CustomerController::class,'edit']);

@@ -208,7 +208,7 @@
                                                 </span>
                                             @endif
                                         </td>
-                                        <td>{{$order->date}}</td>
+                                        <td>{{$order->order_date}}</td>
                                     </tr>
                                 @endforeach
                             @endforeach

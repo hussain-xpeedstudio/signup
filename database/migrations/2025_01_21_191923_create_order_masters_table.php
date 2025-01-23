@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -13,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('order_masters', function (Blueprint $table) {
             $table->id();
-            $table->date('date')->default(DB::raw('CURRENT_DATE'));
+            $table->date('order_date');
             $table->string('invoice_no');
             $table->foreignId('customer_id');
             $table->foreignId('user_id')->constrained();

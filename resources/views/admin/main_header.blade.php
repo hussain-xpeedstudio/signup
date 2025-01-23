@@ -4,7 +4,7 @@
         
         <a href="{{ url('/admin/dashboard') }}" class="logo d-flex justify-content-center align-items-center">
             <h3 class="text-uppercase font-weight-bold text-white" style="">
-                JM International 
+                {{-- JM International  --}} Yosuite
             </h3>
         </a>
         <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
